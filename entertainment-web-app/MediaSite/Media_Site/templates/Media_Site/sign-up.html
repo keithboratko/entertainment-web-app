@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <script src="{% static 'scripts.js' %}"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Entertainment web app</title>
+</head>
+<body>
+  
+  <div class="wrapper login-wrapper">
+    <div class="page-logo login-page-logo"></div>
+    <div class="wrapper login-container">
+      <div class="sign-up-header">Sign Up</div>
+
+      <form class="wrapper sign-up-form">
+        <input class="sign-up-field" type="email" id="email" placeholder="Email Address">
+        <input class="sign-up-field" type="password" id="password" placeholder="Password">
+        <input class="sign-up-field" type="password" id="confirm" placeholder="Repeat Password">
+
+        <input class="sign-up-button" type="submit" value="Create an Account">
+
+      </form>
+      <div class="sign-up-prompt">Already have an account? <a class="sign-up-link" href="/starter-code/login.html">Login</a></div>
+    </div>
+    
+  </div>
+  
+</body>
+</html>

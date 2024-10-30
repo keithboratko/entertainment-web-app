@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+
+  <style>
+    :root {
+      --static-url: "{% static '' %}"
+    }
+  </style>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <script>
+    let DJANGO_VARS = {
+      'static_url': "{% static '' %}",
+      'view_name': "{{ request.resolver_match.view_name }}",
+    }
+  </script>
+  <script src="{% static 'scripts.js' %}"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static '/assets/favicon-32x32.png' %}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Entertainment web app</title>
+</head>
+<body>
+<div class="wrapper main-flex-wrapper">
+  <div class="wrapper nav-wrapper">
+    <div class="page-logo"></div>
+    <div class="nav-item wrapper navlinks-wrapper">
+      <a href="home">
+        <div class="navlink home"></div>
+      </a>
+      <a href="movies">
+        <div class="navlink movies"></div>
+      </a>
+      <a href="tv-series">
+        <div class="navlink tv"></div>
+      </a>
+      <a href="bookmarked">
+        <div class="navlink bookmarked"></div>
+      </a>
+    </div>
+    <div class="nav-item avatar-wrapper">
+      <div class="avatar"></div>
+    </div>
+</div>
+  <div class="wrapper content-wrapper">
+
+    <div class="wrapper search-bar">
+      <div class="search-icon-container">
+      </div>
+      <input class="search-input" type="search" placeholder="Search for movies or TV series">
+    </div>
+
+    <div class="wrapper trending-container">
+      <div class="banner trending-banner">Trending</div>
+      <div class="wrapper trending-bucket">
+        <!-- Example of trending item structure:
+        <div class="trending-item item1">
+          <div class="item-image trending1-image item-flex-wrapper">  
+            L1 ^
+            <div class="trending-text trending1-text">
+              L2A ^
+              <div class="item-data trending1-data">
+                L3A1 ^
+                <span class="year">2019</span> <-- L4A <span class="bullet">&bull;</span> <-- L4B <img src="assets/icon-category-movie.svg"> <-- L4C <span class="category">Movie</span> <-- L4D <span class="bullet">&bull;</span> <-- L4B <span class="rating">PG</span> <-- L4E
+              </div>
+              <div class="item-title trending1-title">Beyond Earth</div>
+              L3A2 ^
+            </div>
+            <div class="wrapper play-button hidden">
+            L2B ^
+              <div class="play-icon"></div>
+              L3B1 ^
+              <div class="play-text">Play</div>
+              L3B2 ^
+            </div>
+            <div class="bookmark-button"></div>
+            L2C ^
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="wrapper recommended-container">
+      <div class="banner recommended-banner">Recommended for you</div>
+      <div class="wrapper recommended-bucket">
+        <!-- Example of recommended item structure:
+        <div class="recommended-item item1">
+          item ^
+          <div class="item-image recommended1-image item-flex-wrapper">
+            L1A ^
+            <div class="wrapper play-button hidden">
+              L2A ^
+              <div class="play-icon"></div>
+              L3A1 ^
+              <div class="play-text">Play</div>
+              L3A2 ^
+            </div>
+            <div class="bookmark-button"></div>
+            L2B ^
+          </div>
+          <div class="recommended-text recommended1-text">
+            L1B ^
+            <div class="item-data recommended1-data">
+              L2B1 ^
+              <span class="year">2019</span> <-- L3B1 <span class="bullet">&bull;</span> <-- L3B2 <img src="assets/icon-category-movie.svg"> <-- L3B3 <span class="category">Movie</span> <-- L3B4 <span class="bullet">&bull;</span> <-- L3B5 <span class="rating">PG</span> <-- L3B6
+            </div>
+            <div class="item-title recommended1-title">The Great Lands</div>
+            L2B2 ^
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
