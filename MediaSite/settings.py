@@ -63,7 +63,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     # Uncomment this and the entry in `urls.py` if you wish to use the Django admin feature:
     # https://docs.djangoproject.com/en/5.1/ref/contrib/admin/
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -72,8 +72,8 @@ INSTALLED_APPS = [
     'Media_Site',
 ]
 
-if not IS_HEROKU_APP:
-    INSTALLED_APPS.append('django.contrib.admin')
+# if not IS_HEROKU_APP:
+#     INSTALLED_APPS.append('django.contrib.admin')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
