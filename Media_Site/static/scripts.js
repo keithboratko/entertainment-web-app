@@ -114,7 +114,7 @@ function createTileText(year, category, rating, title) {
 
 function createMediaTile(item, text_inside) {
   console.log(item)
-  let image = item.thumbnail + "/regular/large.jpg";
+  let image = item.thumbnail + "regular/large.jpg";
   let tile = document.createElement("div");
   tile.classList.add('item');
   tile.setAttribute('data-media-id', item.id);
