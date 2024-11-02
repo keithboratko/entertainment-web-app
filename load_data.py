@@ -23,5 +23,5 @@ with Path("data.json").open() as f:
     data = json.load(f)
 
 for media_item in data:
-    media_item['thumbnail'] = media_item['thumbnail']['regular']['large'].replace("regular/large.jpg", "")
+    media_item['thumbnail'] = media_item['thumbnail']['regular']['large'].replace("regular/large.jpg", "")[2:]
     models.Media(**media_item).save()

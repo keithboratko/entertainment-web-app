@@ -20,6 +20,23 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',  # Set to 'DEBUG' for more detailed logging
+            'propagate': True,
+        },
+    },
+}
+
 # Before using your Heroku app in production, make sure to review Django's deployment checklist:
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -43,8 +60,8 @@ SECRET_KEY = os.environ.get(
 IS_HEROKU_APP = 'DYNO' in os.environ and not 'CI' in os.environ
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = not IS_HEROKU_APP
-
+# DEBUG = not IS_HEROKU_APP
+DEBUG = False
 # On Heroku, it's safe to use a wildcard for `ALLOWED_HOSTS``, since the Heroku router performs
 # validation of the Host header in the incoming HTTP request. On other platforms you may need to
 # list the expected hostnames explicitly in production to prevent HTTP Host header attacks. See:
@@ -107,7 +124,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'gettingstarted.wsgi.application'
+WSGI_APPLICATION = 'MediaSite.wsgi.application'
 
 
 # Database
@@ -174,7 +191,6 @@ USE_TZ = True
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'Media_Site' / 'static',]
 STORAGES = {
     # Enable WhiteNoise's GZip and Brotli compression of static assets:
     # https://whitenoise.readthedocs.io/en/latest/django.html#add-compression-and-caching-support
