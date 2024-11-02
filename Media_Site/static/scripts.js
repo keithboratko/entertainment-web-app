@@ -162,18 +162,10 @@ function createMediaTile(item, text_inside) {
 // User login: outsource
 
 // Load json file like a crazy person
-STATICFILES = ""
 
-fetch(DJANGO_VARS.static_url + "staticfiles.json")
-  .then((response) => response.json())
-  .then((data) => {
-    STATICFILES = data;
-    console.log(data);
-  })
 
 function static_url(relative_path) {
-  console.log(relative_path);
-  return DJANGO_VARS.static_url + STATICFILES["paths"][relative_path]
+  return DJANGO_VARS.static_url + relative_path
 }
 
 function populatePage() {
