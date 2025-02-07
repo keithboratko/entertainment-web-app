@@ -477,7 +477,7 @@ body {
     }
 
     .recommended-bucket > *, .shows-bucket > *, .movies-bucket > * {
-        width: 22%;
+        /* width: 22%; */
         margin-left: 0;
     }
 
