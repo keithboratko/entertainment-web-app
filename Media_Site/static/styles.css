@@ -490,12 +490,12 @@ body {
     }
 
     .recommended-item, .movie-item, .show-item {
-        margin: 0;
+        margin: auto;
     }
 
 }
 
-@media all and (max-width: 375px) {
+@media all and (max-width: 430px) {
 
 
     .main-flex-wrapper {
